@@ -89,6 +89,10 @@ X = X.astype(float)
 labelencoder_y= LabelEncoder()
 y = labelencoder_y.fit_transform(y)
 
+Var_Corr = df.corr()
+sns.heatmap(Var_Corr, xticklabels=Var_Corr.columns, yticklabels=Var_Corr.columns, annot=True)
+plt.show()
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.4,random_state=59)
 
 sc = StandardScaler()
